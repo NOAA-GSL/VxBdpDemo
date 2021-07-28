@@ -13,12 +13,16 @@ Locally with Poetry:
 - Install [pyenv](https://github.com/pyenv/pyenv#installation) and [poetry](https://python-poetry.org/docs/#installation)
 
 ```sh
-$ pyenv install $(cat .python-version)  # Make sure the required version of python is installed. Pyenv may do this transparently.
+$ pyenv install \
+    $(pyenv install --list \
+      | grep -E '^  3.9' \
+      | sort --version-sort -r \
+      | head -n 1)  # Install the latest 3.9 version of Python
 $ poetry env use $(pyenv which python)  # Make sure poetry uses the correct python version
 $ poetry install                        # Setup venv & install dependencies
 $ poetry run pytest                     # Run unit tests
 $ poetry run coverage run -m pytest \
-&& poetry run coverage report           # Create coverage report
+    && poetry run coverage report       # Create coverage report
 $ poetry run black --check src tests    # Lint code
 $ poetry run black src tests            # Format code
 $ poetry run mypy                       # Type checking
@@ -28,8 +32,10 @@ $ poetry run bdp-demo --help            # Run CLI
 Example:
 
 ```sh
-$ poetry run bdp-demo --bucket noaa-ufs-prototypes-pds \
-  --key Prototype6/20141215/gfswav/gfs.20141215/00/wave/station/gfswave.WRB07.spec
+$ poetry run bdp-demo \
+    --bucket noaa-ufs-prototypes-pds \
+    --key Prototype6/20141215/gfswav/gfs.20141215/00/wave/station/gfswave.WRB07.spec \
+    | head -n 20
 
 'WAVEWATCH III SPECTRA'     50    36     1 'spectral resolution for points'
 0.350E-01 0.375E-01 0.401E-01 0.429E-01 0.459E-01 0.491E-01 0.525E-01 0.562E-01
