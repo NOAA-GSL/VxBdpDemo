@@ -6,7 +6,8 @@ extend-ignore = E203
 exclude =
     .git,
     __pycache__,
-    dist
+    dist,
+    .venv
 paths =
     ./src,
     ./tests

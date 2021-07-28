@@ -1,6 +1,6 @@
 # BDP-demo
 
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) [![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg)](http://mypy-lang.org/)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) [![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg)](http://mypy-lang.org/) [![Github Actions](https://github.com/NOAA-GSL/bdp-demo/actions/workflows/python-app.yml/badge.svg)](https://github.com/NOAA-GSL/bdp-demo/actions/workflows/python-app.yml)
 
 A sample Python program to read a file from a specified S3 bucket to stdout.
 
@@ -31,7 +31,7 @@ $ poetry run bdp-demo --help            # Run CLI
 
 Example:
 
-```sh
+```console
 $ poetry run bdp-demo \
     --bucket noaa-ufs-prototypes-pds \
     --key Prototype6/20141215/gfswav/gfs.20141215/00/wave/station/gfswave.WRB07.spec \
@@ -55,4 +55,9 @@ $ poetry run bdp-demo \
 'WRB07     '  46.77 -48.01     131.0  12.96 183.0   0.02 352.4
   0.503E-11  0.923E-10  0.743E-09  0.174E-08  0.656E-08  0.173E-07  0.395E-07
   0.116E-06  0.856E-05  0.220E-03  0.621E-03  0.104E-01  0.245E-01  0.365E-01
+
+$ poetry run bdp-demo \
+    --bucket noaa-ufs-prototype5-pds \
+    --key 20180315/00/ocn_daily.tar
+Can access resource s3://noaa-ufs-prototype5-pds/20180315/00/ocn_daily.tar. However, it contains an unsupported mtype so we can't print it.
 ```
