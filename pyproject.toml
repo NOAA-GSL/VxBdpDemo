@@ -5,7 +5,7 @@ description = ""
 authors = ["Ian McGinnis <ian.mcginnis@noaa.gov>"]
 
 [tool.poetry.scripts]
-echo-s3 = "src.bdp_demo.cli:echo_s3_object"
+bdp-demo = "src.bdp_demo.cli:echo_s3_object"
 
 [tool.poetry.dependencies]
 python = "^3.9"
