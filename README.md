@@ -1,6 +1,6 @@
 # BDP-demo
 
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) [![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg)](http://mypy-lang.org/) ![Github Actions](https://github.com/noaa-gsl/bdp-demo/actions/workflows/python-application.yml/badge.svg)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) [![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg)](http://mypy-lang.org/) [![Github Actions](https://github.com/NOAA-GSL/bdp-demo/actions/workflows/python-app.yml/badge.svg)](https://github.com/NOAA-GSL/bdp-demo/actions/workflows/python-app.yml)
 
 A sample Python program to read a file from a specified S3 bucket to stdout.
 
