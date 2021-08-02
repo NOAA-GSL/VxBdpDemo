@@ -76,7 +76,6 @@ def get_s3_contents(client: S3ServiceResource, bucket: str, key: str) -> bytes:
         else:
             # Something else went wrong
             raise
-
     body = obj.get()["Body"].read()
 
     return body
@@ -97,8 +96,11 @@ def echo_s3_object(bucket: str, key: str) -> int:
     if mtype != "text/plain":
         print(
             f"Can access resource s3://{bucket}/{key}. However, it contains an "
-            "unsupported mtype so we can't print it."
+            "unsupported mtype so we can't print it. We'll attempt to download it "
+            "instead."
         )
+        # TODO: Warning - this file is X size. Proceed? Y/n.
+        s3.Bucket(bucket).download_file(Key=key, Filename=os.path.basename(key))
         sys.exit(1)
 
     try:
