@@ -45,4 +45,5 @@ def test_guess_mtype_unknown():
     s3 = storage_layer.S3Storage()
     assert s3.guess_mtype("s3://foo/bar.baz") is None
 
+
 # TODO - mocks for check_resource_exists, read, query_mime_type, get_mtype and download

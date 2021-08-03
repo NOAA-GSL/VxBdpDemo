@@ -6,7 +6,7 @@ from bdp_demo import log
 
 
 @click.command()
-@click.argument('s3_uri')
+@click.argument("s3_uri")
 def bdp_demo(s3_uri) -> int:
     """Grab the resource at S3_URI and print it.
 

@@ -25,4 +25,5 @@ def test_log_unsupported_storage(logger):
     with pytest.raises(SystemExit):
         logger.log("foo://bar.baz")
 
+
 # TODO - actually test the logger
