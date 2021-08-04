@@ -33,8 +33,7 @@ Example:
 
 ```console
 $ poetry run bdp-demo \
-    --bucket noaa-ufs-prototypes-pds \
-    --key Prototype6/20141215/gfswav/gfs.20141215/00/wave/station/gfswave.WRB07.spec \
+    s3://noaa-ufs-prototypes-pds/Prototype6/20141215/gfswav/gfs.20141215/00/wave/station/gfswave.WRB07.spec \
     | head -n 20
 
 'WAVEWATCH III SPECTRA'     50    36     1 'spectral resolution for points'
@@ -57,7 +56,7 @@ $ poetry run bdp-demo \
   0.116E-06  0.856E-05  0.220E-03  0.621E-03  0.104E-01  0.245E-01  0.365E-01
 
 $ poetry run bdp-demo \
-    --bucket noaa-ufs-prototype5-pds \
-    --key 20180315/00/ocn_daily.tar
-Can access resource s3://noaa-ufs-prototype5-pds/20180315/00/ocn_daily.tar. However, it contains an unsupported mtype so we can't print it.
+    s3://noaa-ufs-prototype5-pds/20180315/00/ocn_daily.tar
+Warning: No supported handler for detected file type: application/x-tar
+Warning: Downloading file instead.
 ```
