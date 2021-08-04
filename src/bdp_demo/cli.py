@@ -1,5 +1,7 @@
 import sys
 import click
+import boto3
+
 from bdp_demo import storage_layer
 from bdp_demo import handlers
 from bdp_demo import log
@@ -13,7 +15,8 @@ def bdp_demo(s3_uri) -> int:
     S3_URI should should take the form "s3://bucket/key"
     """
     # Initialize the S3 storage layer
-    s3 = storage_layer.S3Storage()
+    s3_client = boto3.client("s3")
+    s3 = storage_layer.S3Storage(s3_client)
 
     # Initialize file handlers
     text = handlers.TextHandler(sys.stdout)

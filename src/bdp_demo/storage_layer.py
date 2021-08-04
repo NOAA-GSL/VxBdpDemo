@@ -1,20 +1,19 @@
 import os
 import sys
-import boto3
 import botocore
 from urllib.parse import urlparse
 from typing import Optional, Iterator, TYPE_CHECKING
 
 # Don't use boto3 stubs in production
 if TYPE_CHECKING:
-    from mypy_boto3_s3.service_resource import S3ServiceResource
+    from mypy_boto3_s3.client import S3Client
 else:
-    S3ServiceResource = object
+    S3Client = object
 
 
 class S3Storage:
-    def __init__(self) -> None:
-        self.s3 = boto3.client("s3")
+    def __init__(self, s3_client: S3Client) -> None:
+        self.s3 = s3_client
 
     def scheme(self) -> str:
         return "s3://"
